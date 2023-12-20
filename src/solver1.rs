@@ -1,20 +1,14 @@
 pub(crate) fn solve(doc: &str) -> Option<u32> {
-    doc
-        .lines()
-        .map(parse_line)
-        .sum()
+    doc.lines().map(parse_line).sum()
 }
 
 fn parse_line(line: &str) -> Option<u32> {
-    let digists: Vec<_> = line
-        .chars()
-        .filter_map(|c| c.to_digit(10))
-        .collect();
+    let digists: Vec<_> = line.chars().filter_map(|c| c.to_digit(10)).collect();
     match digists.len() {
         0 => None,
         1 => Some(10 * digists[0] + digists[0]),
         _ => Some(10 * digists[0] + digists[digists.len() - 1]),
-    } 
+    }
 }
 
 #[cfg(test)]

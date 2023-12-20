@@ -1,5 +1,5 @@
-use std::fs::File;
 use std::env;
+use std::fs::File;
 use std::io::prelude::*;
 use std::process;
 
@@ -7,8 +7,7 @@ mod solver1;
 mod solver2;
 
 fn main() -> std::io::Result<()> {
-    let args: Vec<_> = env::args()
-        .collect();
+    let args: Vec<_> = env::args().collect();
     if args.len() != 3 || (args[1] != "1" && args[1] != "2") {
         eprintln!("Usage:\ncargo run <1|2> <input file>");
         process::exit(1);

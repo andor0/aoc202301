@@ -1,8 +1,5 @@
 pub(crate) fn solve(doc: &str) -> Option<u32> {
-    doc
-        .lines()
-        .map(parse_line)
-        .sum()
+    doc.lines().map(parse_line).sum()
 }
 
 fn parse_line(line: &str) -> Option<u32> {
